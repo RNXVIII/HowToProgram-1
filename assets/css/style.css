@@ -1,0 +1,30 @@
+/* Ensure the body and HTML take up the full height */
+html {
+    height: 100%;
+}
+
+header {
+    background-color: #053e16;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    background-color: #053e16;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    width: 100%;
+}
