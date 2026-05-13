@@ -1,30 +1,158 @@
-/* Ensure the body and HTML take up the full height */
-html {
+/* ======================
+   RESET
+====================== */
+
+html,
+body {
     height: 100%;
 }
 
-header {
-    background-color: #053e16;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ======================
+   HEADER
+====================== */
 
+header {
+    background-color: #C8102E; /* primary */
+    padding: 0 2rem;
 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+/* logo text */
+h1 {
+    color: #FDFBF7; /* secondary */
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: 1.5px;
+    padding: 10px;
+}
+
+/* remove underline on logo link */
+header a {
+    text-decoration: none;
+}
+
+/* ======================
+   LINKS
+====================== */
+
+a {
+    color: #3D261F; /* text colour */
+    text-decoration: none;
+
+    font-size: 1.5rem;
+    font-family: 'Noto Sans', sans-serif;
+
+    padding: 0 1rem;
+}
+
+/* hover effect */
+a:hover {
+    background-color: #C8102E; /* primary */
+    color: #FDFBF7; /* secondary */
+
+    transition: 0.4s;
+}
+
+/* ======================
+   NAV (DESKTOP)
+====================== */
+
+nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav > ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    align-items: center;
+}
+
+/* hide checkbox */
+#checkbox-options {
+    display: none;
+}
+
+/* hide hamburger on desktop */
+.show-options {
+    display: none;
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 768px) {
+
+    /* hamburger icon */
+    .show-options {
+        display: block;
+        color: #FDFBF7;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    /* dropdown menu hidden initially */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity 0.3s ease;
+    }
+
+    /* mobile menu */
+    nav > ul {
+        flex-direction: column;
+
+        background-color: #FDFBF7; /* secondary */
+        padding: 1rem 0;
+
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    }
+
+    /* show menu when clicked */
+    #checkbox-options:checked ~ nav {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* ======================
+   FOOTER
+====================== */
 
 footer {
-    text-align: center;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    background-color: #053e16;
-    color: white;
+    background-color: #C8102E; /* primary */
+    color: #FDFBF7; /* secondary */
+
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
     width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 10px 0;
 }
